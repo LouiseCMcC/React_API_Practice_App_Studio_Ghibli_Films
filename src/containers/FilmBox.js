@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import FilmList from '../components/FilmList';
 import FilmDetail from '../components/FilmDetail';
 import FilmSelector from '../components/FilmSelect';
+import FilmForm from '../components/FilmForm';
 
 
 const FilmBox = () => {
@@ -26,10 +27,18 @@ const FilmBox = () => {
         setSelectedFilm(film);
     }
 
+    const addFilm = (newFilm) => {
+        newFilm.id = Date.now(); //this is unique id for not data persistence data
+        const updatedFilms = [...films, newFilm];
+        setFilms(updatedFilms);
+
+    };
+
     return (
         <div className="main-container">
             <FilmSelector films={films} onFilmSelected={onFilmSelected}/>
             {selectedFilm ? <FilmDetail selectedFilm={selectedFilm}/>:null}
+            <FilmForm onFilmSubmit={addFilm} />
         </div>
     )
 }
