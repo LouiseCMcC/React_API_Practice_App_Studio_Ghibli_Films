@@ -6,9 +6,9 @@ const FilmDetail = ({selectedFilm}) => {
         <>
         <div>
             <h3>{selectedFilm.title}</h3>
-            {/* <p>Release Date: {selectedFilm.release_date}</p>
+            <p>Release Date: {selectedFilm.release_date}</p>
             <p>Running Time: {selectedFilm.running_time}</p>
-            <p>Director: {selectedFilm.director}</p> */}
+            <p>Director: {selectedFilm.director}</p>
             </div>
         </>
     )
